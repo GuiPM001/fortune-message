@@ -1,7 +1,11 @@
 import { OpenAI  } from 'openai';
 
+const key = process.env.OPEN_AI_API_KEY;
+
+console.log(key)
+
 const openai = new OpenAI({
-  apiKey: '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',
+  apiKey: key,
   dangerouslyAllowBrowser: true
 });
 
