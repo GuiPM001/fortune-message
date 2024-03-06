@@ -1,6 +1,6 @@
 import { OpenAI  } from 'openai';
 
-const key = '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';
+const key = process.env.REACT_APP_OPEN_AI_API_KEY;
 
 const openai = new OpenAI({
   apiKey: key,
