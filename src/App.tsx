@@ -1,13 +1,24 @@
 import { useEffect, useState } from "react";
+import { getNewMessage } from "./services/open-ai.service";
+import { getSavedMessage, saveMessage } from "./services/local-storage.service";
 import fortuneCookie from "./images/fortune-cookie.png";
 import fortuneCookieOpen from "./images/fortune-cookie-open.png";
-import { getNewMessage } from "./services/open-ai.service";
 import "./App.css";
+import { HammerLoading } from "./components/hammer-loading";
 
 function App() {
   const [hiddenOpenCookie, setHiddenOpenCookie] = useState<boolean>(true);
   const [message, setMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    const savedMessage = getSavedMessage();
+
+    if (savedMessage) {
+      setMessage(savedMessage);
+      setHiddenOpenCookie(false);
+    }
+  }, []);
 
   const openCookie = async () => {
     setLoading(true);
@@ -16,29 +27,24 @@ function App() {
     
     if (message) {
       setMessage(message);
-      localStorage.setItem("message", message);
+      saveMessage(message);
       setHiddenOpenCookie(false);
     }
 
     setLoading(false);
   };
 
-  useEffect(() => {
-    const messageReceived = localStorage.getItem("message");
-
-    if (messageReceived) {
-      setMessage(messageReceived);
-      setHiddenOpenCookie(false);
-    }
-  }, []);
-
   return (
     <div className="container">
-      {loading && <div className="container-loading">Broking the cookie...</div>}
+      {loading &&
+        <HammerLoading />
+      }
 
       {hiddenOpenCookie ? (
         <div className="container-cookie">
-          <h3>Click in the fortune cookie</h3>
+          <h3>
+            {loading ? 'Broking the cookie...' : 'Click in the fortune cookie'}
+          </h3>
           <img
             alt="Image of a fortune cookie"
             id="fortune-cookie"
