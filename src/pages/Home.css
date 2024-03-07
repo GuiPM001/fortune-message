@@ -20,8 +20,7 @@ span {
   margin-left: 7.75rem;
   margin-top: 2.75rem;
   max-width: 12rem;
-  display: inline-block;
-  text-wrap: nowrap;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
