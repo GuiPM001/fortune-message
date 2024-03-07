@@ -1,0 +1,10 @@
+{
+  "header": {
+    "title": "Welcome to React"
+  },
+  "home": {
+    "title": "Click in the fortune cookie",
+    "loadingText": "Broking the cookie...",
+    "returnText": "Come back tomorrow for a new message"
+  }
+}
