@@ -13,17 +13,21 @@ span {
   margin-bottom: 30px;
 }
 
-.message {
+.message-paper {
   position: absolute;
   transform: rotate(-18deg);
   z-index: 1000;
-  margin-left: 8rem;
-  margin-top: 3rem;
+  margin-left: 7.75rem;
+  margin-top: 2.75rem;
   max-width: 12rem;
-  font-size: 12px;
+  display: inline-block;
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.message {
+  font-size: 12px;
 }
 
 .message-outside {

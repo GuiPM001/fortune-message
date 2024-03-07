@@ -57,7 +57,9 @@ function Home(props: HomeProps) {
         </div>
       ) : (
         <div className="container-cookie">
-          <span className="message">{message}</span>
+          <div className="message-paper">
+            <span className="message">{message}</span>
+          </div>
 
           <img
             alt="Image of a fortune cookie open"
