@@ -6,12 +6,12 @@
 }
 
 .spinner {
-  margin:20px auto 20px auto;
+  margin: 35px auto 20px auto;
   position:relative;
   animation: spin .5s infinite linear;
   animation-direction: alternate-reverse;
-  height: 75px;
-  width: 75px;
+  height: 70px;
+  width: 70px;
   background:  url(http://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Hammer_-_Noun_project_1306.svg/1088px-Hammer_-_Noun_project_1306.svg.png); 
   background-size: contain;
   background-repeat: no-repeat;

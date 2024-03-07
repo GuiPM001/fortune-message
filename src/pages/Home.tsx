@@ -49,7 +49,7 @@ function Home(props: HomeProps) {
           </span>
 
           <img
-            alt="Image of a fortune cookie"
+            alt="Fortune cookie"
             id="fortune-cookie"
             src={fortuneCookie}
             onClick={openCookie}
@@ -62,7 +62,7 @@ function Home(props: HomeProps) {
           </div>
 
           <img
-            alt="Image of a fortune cookie open"
+            alt="Fortune cookie open"
             id="fortune-cookir-open"
             src={fortuneCookieOpen}
           />
