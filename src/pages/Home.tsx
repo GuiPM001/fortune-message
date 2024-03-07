@@ -66,7 +66,7 @@ function Home(props: HomeProps) {
           />
 
           <span className="message-outside">{message}</span>
-          
+
           <p className="return-text">{intl.get("home.returnText")}</p>
         </div>
       )}
