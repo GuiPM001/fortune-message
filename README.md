@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
+<div align="center">
+  <img src="./images/logo.png" alt="Logo" height="80">
 
-## Available Scripts
+  <h3 align="center">Fortune Message Generator</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    A fortune message generator, integrated with GPT to generate different messages every day.
+    <br />
+    <a target=”_blank” href="https://fortune-message.vercel.app/">View Demo</a>
+  </p>
+</div>
 
-### `npm start`
+## ✦ About The Project
+![Product Screen Shot][project-image]
+The project consists of a single screen where you can click on the fortune cookie to get a message.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The system is integrated with GPT so that it is possible to generate different messages every time the cookie is broken, in addition to the message received being saved, making it possible to obtain a new message only the following day.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Furthermore, the website adapts to the language of the browser used (support only for English and Spanish), automatically translating the information displayed.
 
-### `npm test`
+### Built With
+[![React][React-image]][React-url]
+[![TypeScript][Typescript-image]][Typescript-url]
+[![CSS][CSS-image]][CSS-url]
+[![OpenAI][OpenAI-image]][OpenAI-url]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✦ Getting Started
+### Installation
+1. Get a free API Key at [Open AI - API Keys](https://platform.openai.com/api-keys)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/GuiPM001/fortune-message
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `open-ai.service.ts`
+   ```js
+   const API_KEY = 'ENTER YOUR KEY';
+   ```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[project-image]: images/project-image.png
+[React-image]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://react.dev/
+[Typescript-image]:https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+[Typescript-url]: https://www.typescriptlang.org/
+[CSS-image]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[CSS-url]: https://www.w3schools.com/css/
+[OpenAI-image]: https://img.shields.io/badge/ChatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white
+[OpenAI-url]: https://platform.openai.com/docs/overview
