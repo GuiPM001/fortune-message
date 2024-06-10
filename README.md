@@ -1,6 +1,3 @@
-<a name="readme-top"></a>
-
-<br />
 <div align="center">
   <img src="./images/logo.png" alt="Logo" height="80">
 
@@ -9,7 +6,7 @@
   <p align="center">
     A fortune message generator, integrated with GPT to generate different messages every day.
     <br />
-    <a target=”_blank” href="https://fortune-message.vercel.app/">View Demo</a>
+    <a target="_blank" href="https://fortune-message.vercel.app/">View Demo</a>
   </p>
 </div>
 
@@ -19,7 +16,7 @@ The project consists of a single screen where you can click on the fortune cooki
 
 The system is integrated with GPT so that it is possible to generate different messages every time the cookie is broken, in addition to the message received being saved, making it possible to obtain a new message only the following day.
 
-Furthermore, the website adapts to the language of the browser used (support only for English and Spanish), automatically translating the information displayed.
+Furthermore, the website adapts to the language of the browser used (support only for English and Portuguese), automatically translating the information displayed.
 
 ### Built With
 [![React][React-image]][React-url]
