@@ -28,7 +28,7 @@ function Home(props: HomeProps) {
   const openCookie = async () => {
     setLoading(true);
 
-    const newMessage = await getNewMessage(currentLocale);
+    const newMessage = await getMessage();
 
     if (newMessage) {
       saveMessage(newMessage);
@@ -36,6 +36,18 @@ function Home(props: HomeProps) {
     }
 
     setLoading(false);
+  };
+
+  const getMessage = async () => {
+    let message = null;
+
+    try {
+      message = await getNewMessage(currentLocale);
+    } catch (e: any) {
+      message = "Biscoito vazio, mais sorte da próxima vez";
+    }
+
+    return message;
   };
 
   return (

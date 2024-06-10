@@ -1,4 +1,4 @@
-import { OpenAI  } from "openai";
+import { OpenAI } from "openai";
 import { languages } from "../enums/languages";
 
 const API_KEY = process.env.REACT_APP_OPEN_AI_API_KEY;
