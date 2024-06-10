@@ -5,6 +5,7 @@
   "home": {
     "title": "Clique no biscoito da sorte",
     "loadingText": "Quebrando biscoito...",
+    "errorMessage": "Biscoito vazio, mais sorte da próxima vez",
     "returnText": "Volte amanhã para uma nova mensagem!"
   }
 }

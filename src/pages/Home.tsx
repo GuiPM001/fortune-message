@@ -44,7 +44,7 @@ function Home(props: HomeProps) {
     try {
       message = await getNewMessage(currentLocale);
     } catch (e: any) {
-      message = "Biscoito vazio, mais sorte da próxima vez";
+      message = intl.get("home.errorMessage");
     }
 
     return message;
