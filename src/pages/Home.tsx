@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getNewMessage } from "../services/open-ai.service";
+import { getNewMessage } from "../services/gemini.service";
 import { getSavedMessage, saveMessage } from "../services/local-storage.service";
 import { HammerLoading } from "../components/hammer-loading";
 import fortuneCookie from "../images/fortune-cookie.png";
