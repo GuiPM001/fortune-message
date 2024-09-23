@@ -1,5 +1,6 @@
 .container {
-  width: 100vw;
+  width: 75vw;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,50 +13,7 @@ span {
   margin-bottom: 30px;
 }
 
-.message-paper {
-  position: absolute;
-  transform: rotate(-18deg);
-  z-index: 1000;
-  margin-left: 7.75rem;
-  margin-top: 2.75rem;
-  max-width: 12rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.message {
-  font-size: 12px;
-}
-
-.message-outside {
-  text-align: center;
-  font-style: italic;
-  margin-bottom: 0px;
-  max-width: 75vw;
-}
-
 img {
   object-fit: contain;
   filter: drop-shadow(6px 6px 6px #949494);
-}
-
-#fortune-cookir-open {
-  width: 350px;
-}
-
-#fortune-cookie {
-  cursor: pointer;
-  width: 200px;
-}
-
-.container-cookie {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.return-text {
-  position: absolute;
-  bottom: 5vh;
 }

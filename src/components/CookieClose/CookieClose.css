@@ -1,0 +1,10 @@
+.container-cookie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#fortune-cookie {
+  cursor: pointer;
+  width: 200px;
+}

@@ -1,88 +1,42 @@
 import { useEffect, useState } from "react";
-import { getNewMessage } from "../services/gemini.service";
-import { getSavedMessage, saveMessage } from "../services/local-storage.service";
-import { HammerLoading } from "../components/hammer-loading";
-import fortuneCookie from "../images/fortune-cookie.png";
-import fortuneCookieOpen from "../images/fortune-cookie-open.png";
+import { getSavedMessage } from "../services/local-storage.service";
+import { languages } from "../enums/languages";
+import { CookieClose, CookieOpen } from "../components";
+import intl from "react-intl-universal";
 import "./Home.css";
 
-interface HomeProps {
-  intl: any;
-  currentLocale: string;
-}
+function Home() {
+  const locales = {
+    "pt-BR": require("../locales/pt-BR.json"),
+    "en-US": require("../locales/en-US.json"),
+  };
 
-function Home(props: HomeProps) {
-  const { intl, currentLocale } = props;
+  const currentLocale =
+    navigator.language in locales ? navigator.language : languages.en;
+
+  intl.init({
+    currentLocale,
+    locales,
+  });
 
   const [message, setMessage] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const savedMessage = getSavedMessage();
 
-    if (savedMessage) {
-      setMessage(savedMessage);
-    }
+    if (savedMessage) setMessage(savedMessage);
   }, []);
-
-  const openCookie = async () => {
-    setLoading(true);
-
-    const newMessage = await getMessage();
-
-    if (newMessage) {
-      saveMessage(newMessage);
-      setMessage(newMessage);
-    }
-
-    setLoading(false);
-  };
-
-  const getMessage = async () => {
-    let message = null;
-
-    try {
-      message = await getNewMessage(currentLocale);
-    } catch (e: any) {
-      message = intl.get("home.errorMessage");
-    }
-
-    return message;
-  };
 
   return (
     <div className="container">
-      {loading && <HammerLoading />}
-
       {!message ? (
-        <div className="container-cookie">
-          <span>
-            {loading ? intl.get("home.loadingText") : intl.get("home.title")}
-          </span>
-
-          <img
-            alt="Fortune cookie"
-            id="fortune-cookie"
-            src={fortuneCookie}
-            onClick={openCookie}
-          />
-        </div>
+        <CookieClose
+          setMessage={setMessage}
+          intl={intl}
+          currentLocale={currentLocale}
+        />
       ) : (
-        <div className="container-cookie">
-          <div className="message-paper">
-            <span className="message">{message}</span>
-          </div>
-
-          <img
-            alt="Fortune cookie open"
-            id="fortune-cookir-open"
-            src={fortuneCookieOpen}
-          />
-
-          <span className="message-outside">{message}</span>
-
-          <p className="return-text">{intl.get("home.returnText")}</p>
-        </div>
+        <CookieOpen message={message} intl={intl} />
       )}
     </div>
   );

@@ -1,6 +1,6 @@
-import './hammer-loading.css';
+import './HammerLoading.css';
 
-export function HammerLoading() {
+export const HammerLoading = () => {
   return (
     <div className='container-loading'>
       <div className='spinner'></div>
