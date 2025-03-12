@@ -9,20 +9,23 @@ interface CookieCloseProps {
   intl: any;
   currentLocale: string;
   setMessage: (message: string) => void;
+  setError: (error: boolean) => void;
 }
 
 export const CookieClose = (props: CookieCloseProps) => {
-  const { intl, currentLocale, setMessage } = props;
+  const { intl, currentLocale, setMessage, setError } = props;
 
   const [loading, setLoading] = useState<boolean>(false);
 
   const getMessage = async () => {
     let message = null;
+    setError(false);
 
     try {
       message = await getNewMessage(currentLocale);
     } catch (e: any) {
       message = intl.get("home.errorMessage");
+      setError(true);
     }
 
     return message;

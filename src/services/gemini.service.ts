@@ -1,4 +1,3 @@
-import { languages } from "../enums/languages";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI(process.env.REACT_APP_OPEN_AI_API_KEY!);
@@ -13,8 +12,5 @@ export const getNewMessage = async (currentLocale: string) => {
 }
 
 const generateQuestion = (currentLocale: string): string => {
-  if (currentLocale === languages.pt)
-    return "Gere uma mensagem de biscoito da sorte e me responda somente com a mensagem";
-
-  return "Generate a fortune cookie message and reply to me with just the message";
+  return `Generate a fortune cookie message, disregarding the ones you have previously generated, and reply to me with just the message (message must be in ${currentLocale}).`;
 }

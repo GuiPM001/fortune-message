@@ -3,11 +3,13 @@ import "./CookieOpen.css";
 
 interface CookieOpenProps {
   message: string;
+  error: boolean;
+  clearMessage: () => void;
   intl: any;
 }
 
 export const CookieOpen = (props: CookieOpenProps) => {
-  const { message, intl } = props;
+  const { message, error, clearMessage, intl } = props;
 
   return (
     <div className="container-cookie">
@@ -23,7 +25,13 @@ export const CookieOpen = (props: CookieOpenProps) => {
 
       <span className="message-outside">{message}</span>
 
-      <p className="return-text">{intl.get("home.returnText")}</p>
+      <div className="bottom-div">
+        {error ? (
+          <button className="button" onClick={clearMessage}>{intl.get("home.getNewCookie")}</button>
+        ) : (
+          <p>{intl.get("home.returnText")}</p>
+        )}
+      </div>
     </div>
   );
 };

@@ -20,6 +20,7 @@ function Home() {
   });
 
   const [message, setMessage] = useState<string>("");
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     const savedMessage = getSavedMessage();
@@ -27,16 +28,22 @@ function Home() {
     if (savedMessage) setMessage(savedMessage);
   }, []);
 
+  const clearMessage = () => {
+    setMessage("");
+    setError(false);
+  }
+
   return (
     <div className="container">
       {!message ? (
         <CookieClose
           setMessage={setMessage}
+          setError={setError}
           intl={intl}
           currentLocale={currentLocale}
         />
       ) : (
-        <CookieOpen message={message} intl={intl} />
+        <CookieOpen message={message} error={error} clearMessage={clearMessage} intl={intl} />
       )}
     </div>
   );

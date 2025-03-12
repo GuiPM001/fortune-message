@@ -1,13 +1,7 @@
-import { GoogleAd } from "./components";
 import Home from "./pages/Home";
 
 function App() {
-  return (
-    <>
-      <Home />
-      <GoogleAd />
-    </>
-  );
+  return <Home />;
 }
 
 export default App;

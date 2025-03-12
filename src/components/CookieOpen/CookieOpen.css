@@ -27,11 +27,24 @@
   max-width: 75vw;
 }
 
-.return-text {
+.bottom-div {
   position: absolute;
   bottom: 5vh;
 }
 
 #fortune-cookie-open {
   width: 350px;
+}
+
+.button {
+  border: none;
+  background-color: bisque;
+  padding: 12px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button:hover {
+  background-color: rgb(255, 211, 156);
 }

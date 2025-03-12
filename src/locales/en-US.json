@@ -6,6 +6,7 @@
     "title": "Click in the fortune cookie",
     "loadingText": "Broking the cookie...",
     "errorMessage": "Empty cookie, better luck next time",
-    "returnText": "Come back tomorrow for a new message!"
+    "returnText": "Come back tomorrow for a new message!",
+    "getNewCookie": "Get another cookie"
   }
 }
