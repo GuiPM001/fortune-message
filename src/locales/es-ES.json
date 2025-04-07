@@ -1,0 +1,12 @@
+{
+  "header": {
+    "title": "Bienvenido"
+  },
+  "home": {
+    "title": "Haz clic en la galleta de la suerte",
+    "loadingText": "Rompiendo la galleta...",
+    "errorMessage": "Galleta vacía, mejor suerte la próxima vez",
+    "returnText": "¡Vuelve mañana por un nuevo mensaje!",
+    "getNewCookie": "Obtener otra galleta"
+  }
+}
