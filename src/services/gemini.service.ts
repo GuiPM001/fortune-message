@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(process.env.REACT_APP_OPEN_AI_API_KEY!);
 
 export const getNewMessage = async (currentLocale: string) => {
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash"});
 
   const prompt = generateQuestion(currentLocale);
 
@@ -12,5 +12,5 @@ export const getNewMessage = async (currentLocale: string) => {
 }
 
 const generateQuestion = (currentLocale: string): string => {
-  return `Generate a fortune cookie message, disregarding the ones you have previously generated, and reply to me with just the message (message must be in ${currentLocale}).`;
+  return `write a short fortune cookie message, with a different topic than the previous one, and reply to me with just the message (message must be in ${currentLocale}).`;
 }
