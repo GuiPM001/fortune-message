@@ -1,33 +1,25 @@
-#fortuneCookieOpen {
-  width: 15rem;
-  cursor: default;
-}
-
-#fortuneCookieClose {
+.cookie.closed {
   width: 12rem;
   cursor: pointer;
 }
 
-.cookie.loading {
+.cookie.open {
+  width: 15rem;
+  cursor: default;
+}
+
+.cookie.visible {
+  opacity: 1;
+  display: block;
+}
+
+.cookie.hidden {
+  opacity: 0;
+  display: none;
+}
+
+.loading {
   animation: shake 0.5s infinite;
-}
-
-.fade-out {
-  opacity: 1;
-}
-
-.fade-in {
-  opacity: 1;
-  animation: fade 0.5s ease;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes shake {

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import fortuneCookieClose from "../../images/fortune-cookie-close.png";
 import fortuneCookieOpen from "../../images/fortune-cookie-open.png";
 import "./Image.css";
@@ -18,12 +19,17 @@ export const Image = (props: ImageProps) => {
   };
 
   return (
-    <img
-      alt="Fortune cookie"
-      id={opened ? "fortuneCookieOpen" : "fortuneCookieClose"}
-      className={`cookie ${loading ? "loading" : ""} ${opened ? "fade-in" : "fade-out"}`}
-      src={opened ? fortuneCookieOpen : fortuneCookieClose}
-      onClick={handleClick}
-    />
+    <div className="cookie-container" onClick={handleClick}>
+      <img
+        className={`cookie closed ${opened ? "hidden" : "visible"} ${loading ? "loading" : ""}`}
+        src={fortuneCookieClose}
+        alt="Closed cookie"
+      />
+      <img
+        className={`cookie open ${opened ? "visible" : "hidden"}`}
+        src={fortuneCookieOpen}
+        alt="Opened cookie"
+      />
+    </div>
   );
 };
