@@ -6,7 +6,7 @@ function App() {
   const locales = {
     "pt-BR": require("./locales/pt-BR.json"),
     "en-US": require("./locales/en-US.json"),
-    "es-ES": require("./locales/es-ES.json"),
+    "es-419": require("./locales/es-ES.json"),
   };
 
   const currentLocale =

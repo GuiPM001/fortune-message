@@ -1,5 +1,5 @@
 export enum languages {
   pt = "pt-BR",
   en = "en-US",
-  es = "es-ES"
+  es = "es-419"
 }
