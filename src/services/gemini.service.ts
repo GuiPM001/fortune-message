@@ -12,5 +12,6 @@ export const getNewMessage = async (currentLocale: string) => {
 }
 
 const generateQuestion = (currentLocale: string): string => {
-  return `write a short fortune cookie message, with a different topic than the previous one, and reply to me with just the message (message must be in ${currentLocale}).`;
+  const uniqueifier = Math.random();
+  return `write a short fortune cookie message, and reply to me with just the message (message must be in ${currentLocale}). Uniqueifier: ${uniqueifier}`;
 }
