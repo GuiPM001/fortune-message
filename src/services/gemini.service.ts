@@ -1,14 +1,16 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 
-const genAI = new GoogleGenerativeAI(process.env.REACT_APP_OPEN_AI_API_KEY!);
+const ai = new GoogleGenAI({apiKey: process.env.REACT_APP_GEMINI_API_KEY!});
 
 export const getNewMessage = async (currentLocale: string) => {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash"});
-
   const prompt = generateQuestion(currentLocale);
 
-  const result = await model.generateContent(prompt);
-  return result.response.text();
+  const result = await ai.models.generateContent({
+    model: process.env.REACT_APP_GEMINI_MODEL!,
+    contents: prompt
+  });
+
+  return result.text ?? "";
 }
 
 const generateQuestion = (currentLocale: string): string => {

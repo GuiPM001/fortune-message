@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import fortuneCookieClose from "../../images/fortune-cookie-close.png";
 import fortuneCookieOpen from "../../images/fortune-cookie-open.png";
 import "./Image.css";
